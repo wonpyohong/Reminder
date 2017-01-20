@@ -22,6 +22,6 @@ public class MainActivity extends AppCompatActivity {
 		ButterKnife.bind(this);
 
 		List<Note> noteList = Arrays.asList(new Note("title1", "body1"), new Note("title2", "body2"));
-		recyclerView.setAdapter(new NotePreviewListAdapter(noteList));
+		recyclerView.setAdapter(new NotePreviewListAdapter(this, noteList));
 	}
 }

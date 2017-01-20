@@ -2,20 +2,26 @@ package com.wonpyohong.reminder;
 
 import java.util.List;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import com.wonpyohong.reminder.model.Note;
 
 public class NotePreviewListAdapter extends RecyclerView.Adapter<NotePreviewViewHolder> {
+	private final Context context;
 	private final List<Note> noteList;
 
-	public NotePreviewListAdapter(List<Note> noteList) {
+	public NotePreviewListAdapter(Context context, List<Note> noteList) {
+		this.context = context;
 		this.noteList = noteList;
 	}
 
 	@Override
 	public NotePreviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		return null;
+		View itemView = LayoutInflater.from(context).inflate(R.layout.note_preview, parent);
+		return new NotePreviewViewHolder(itemView);
 	}
 
 	@Override

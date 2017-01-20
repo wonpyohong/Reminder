@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.robolectric.RuntimeEnvironment;
 
 import com.wonpyohong.reminder.model.Note;
 import junit.framework.Assert;
@@ -16,7 +17,7 @@ public class NotePreviewListAdapterTest extends BaseTest {
 	@Before
 	public void setUp() throws Exception {
 		List<Note> noteList = Arrays.asList(new Note("title1", "body1"), new Note("title2", "body2"));
-		notePreviewListAdapter = new NotePreviewListAdapter(noteList);
+		notePreviewListAdapter = new NotePreviewListAdapter(RuntimeEnvironment.application, noteList);
 	}
 
 	@Test

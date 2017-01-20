@@ -3,9 +3,11 @@ package com.wonpyohong.reminder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
+import org.robolectric.RuntimeEnvironment;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.FrameLayout;
 
 public class NotePreviewViewHolderTest extends BaseTest {
 
@@ -13,7 +15,8 @@ public class NotePreviewViewHolderTest extends BaseTest {
 
 	@Before
 	public void setUp() throws Exception {
-		View view = Mockito.mock(View.class);
+		FrameLayout frameLayout = new FrameLayout(RuntimeEnvironment.application);
+		View view = LayoutInflater.from(RuntimeEnvironment.application).inflate(R.layout.note_preview, frameLayout);
 		notePreviewViewHolder = new NotePreviewViewHolder(view);
 	}
 
@@ -25,5 +28,25 @@ public class NotePreviewViewHolderTest extends BaseTest {
 
 		// then
 		Assert.assertNotNull(notePreviewViewHolder);
+	}
+
+	@Test
+	public void titleTextView_notNull() throws Exception {
+		// given
+
+		// when
+
+		// then
+		Assert.assertNotNull(notePreviewViewHolder.titleTextView);
+	}
+
+	@Test
+	public void bodyTextView_notNull() throws Exception {
+		// given
+
+		// when
+
+		// then
+		Assert.assertNotNull(notePreviewViewHolder.bodyTextView);
 	}
 }

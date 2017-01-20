@@ -2,17 +2,11 @@ package com.wonpyohong.reminder;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 
 import junit.framework.Assert;
 
-@RunWith(RobolectricTestRunner.class)
-@Config(sdk = 21,
-	constants = BuildConfig.class)
-public class MainActivityTest {
+public class MainActivityTest extends BaseTest {
 
 	private MainActivity mainActivity;
 

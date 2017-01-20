@@ -44,4 +44,14 @@ public class MainActivityTest extends BaseTest {
 		// then
 		Assert.assertNotNull(mainActivity.recyclerView.getAdapter());
 	}
+
+	@Test
+	public void recyclerView_layoutManager있어야함() throws Exception {
+		// given
+
+		// when
+
+		// then
+		Assert.assertNotNull(mainActivity.recyclerView.getLayoutManager());
+	}
 }

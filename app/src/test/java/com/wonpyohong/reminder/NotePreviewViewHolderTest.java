@@ -4,10 +4,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.Shadows;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import com.wonpyohong.reminder.model.Note;
 
 public class NotePreviewViewHolderTest extends BaseTest {
 
@@ -48,5 +50,18 @@ public class NotePreviewViewHolderTest extends BaseTest {
 
 		// then
 		Assert.assertNotNull(notePreviewViewHolder.bodyTextView);
+	}
+
+	@Test
+	public void bind() throws Exception {
+		// given
+		Note note = new Note("testTitle", "testBody");
+
+		// when
+		notePreviewViewHolder.bind(note);
+
+		// then
+		Assert.assertEquals("testTitle", Shadows.shadowOf(notePreviewViewHolder.titleTextView).innerText());
+		Assert.assertEquals("testBody", Shadows.shadowOf(notePreviewViewHolder.bodyTextView).innerText());
 	}
 }

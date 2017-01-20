@@ -20,13 +20,13 @@ public class NotePreviewListAdapter extends RecyclerView.Adapter<NotePreviewView
 
 	@Override
 	public NotePreviewViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View itemView = LayoutInflater.from(context).inflate(R.layout.note_preview, parent);
+		View itemView = LayoutInflater.from(context).inflate(R.layout.note_preview, parent, false);
 		return new NotePreviewViewHolder(itemView);
 	}
 
 	@Override
 	public void onBindViewHolder(NotePreviewViewHolder holder, int position) {
-
+		holder.bind(noteList.get(position));
 	}
 
 	@Override

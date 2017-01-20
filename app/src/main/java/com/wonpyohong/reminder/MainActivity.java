@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,5 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
 		List<Note> noteList = Arrays.asList(new Note("title1", "body1"), new Note("title2", "body2"));
 		recyclerView.setAdapter(new NotePreviewListAdapter(this, noteList));
+		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 	}
 }

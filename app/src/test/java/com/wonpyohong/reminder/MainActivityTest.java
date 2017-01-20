@@ -34,4 +34,14 @@ public class MainActivityTest extends BaseTest {
 		// then
 		Assert.assertNotNull(mainActivity.recyclerView);
 	}
+
+	@Test
+	public void recyclerViewAdapter_존재해야함() throws Exception {
+		// given
+
+		// when
+
+		// then
+		Assert.assertNotNull(mainActivity.recyclerView.getAdapter());
+	}
 }

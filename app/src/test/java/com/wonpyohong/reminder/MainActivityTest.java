@@ -1,26 +1,24 @@
 package com.wonpyohong.reminder;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-import android.app.Activity;
 import junit.framework.Assert;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = 21,
 	constants = BuildConfig.class)
 public class MainActivityTest {
-	@Test
-	public void onCreateTest() throws Exception {
-		// given
 
-		// when
-		Robolectric.setupActivity(MainActivity.class);
+	private MainActivity mainActivity;
 
-		// then
+	@Before
+	public void setUp() throws Exception {
+		mainActivity = Robolectric.setupActivity(MainActivity.class);
 	}
 
 	@Test
@@ -28,9 +26,18 @@ public class MainActivityTest {
 		// given
 
 		// when
-		Activity mainActivity = Robolectric.setupActivity(MainActivity.class);
 
 		// then
 		Assert.assertEquals(mainActivity.getTitle(), "Reminder");
+	}
+
+	@Test
+	public void recyclerView_존재해야함() throws Exception {
+		// given
+
+		// when
+
+		// then
+		Assert.assertNotNull(mainActivity.recyclerView);
 	}
 }

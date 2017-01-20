@@ -11,7 +11,7 @@ import com.wonpyohong.reminder.model.Note;
 
 public class NotePreviewListAdapter extends RecyclerView.Adapter<NotePreviewViewHolder> {
 	private final Context context;
-	private final List<Note> noteList;
+	final List<Note> noteList;
 
 	public NotePreviewListAdapter(Context context, List<Note> noteList) {
 		this.context = context;
